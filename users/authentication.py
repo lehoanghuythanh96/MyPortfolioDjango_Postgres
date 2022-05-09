@@ -1,3 +1,5 @@
+import os
+
 import jwt
 from django.forms import model_to_dict
 from rest_framework import status
@@ -24,7 +26,6 @@ class CustomTokenVerifyView(TokenVerifyView):
             raise InvalidToken(e.args[0])
 
         if "token" in request.data:
-            print(request.data["token"])
             userinfo = jwt.decode(request.data["token"], settings.SECRET_KEY, settings.SIMPLE_JWT["ALGORITHM"])
             if settings.SIMPLE_JWT["USER_ID_CLAIM"] in userinfo:
                 foundUser = User.objects.get(id=userinfo[settings.SIMPLE_JWT["USER_ID_CLAIM"]])

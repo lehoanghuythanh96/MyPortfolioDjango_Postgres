@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
     'users',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -205,3 +205,22 @@ SIMPLE_JWT = {
     'REFRESH_COOKIE_SAMESITE': 'Lax',
     # Whether to set the flag restricting cookie leaks on cross-site requests. This can be 'Lax', 'Strict', or None to disable the flag.
 }
+
+# Media
+
+MEDIA_ROOT = 'cdn'
+USER_MEDIA_FOLDER = 'userImgs'
+POST_MEDIA_FOLDER = 'postImgs'
+
+MEDIA_CATEGORIES = {
+    "blogPostImage": "blogpost_image",
+    "userAvatar": "user_avatar",
+    "blogPostAvatar": "blogpost_avatar"
+}
+
+POST_TYPES = {
+    "blogPost": "blog_post"
+}
+
+# URL used to access the media
+MEDIA_URL = '/media/'
