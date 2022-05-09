@@ -1,11 +1,40 @@
+import jwt
+from django.forms import model_to_dict
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 from rest_framework_simplejwt.serializers import TokenRefreshSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.views import TokenRefreshView
+from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
 from MyPortfolioDjango_Postgres import settings
+from users.models import User
+
+
+class CustomTokenVerifyView(TokenVerifyView):
+
+    # serializer_class = HeaderTokenVerifySerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+
+        try:
+            serializer.is_valid(raise_exception=True)
+        except TokenError as e:
+            raise InvalidToken(e.args[0])
+
+        if "token" in request.data:
+            print(request.data["token"])
+            userinfo = jwt.decode(request.data["token"], settings.SECRET_KEY, settings.SIMPLE_JWT["ALGORITHM"])
+            if settings.SIMPLE_JWT["USER_ID_CLAIM"] in userinfo:
+                foundUser = User.objects.get(id=userinfo[settings.SIMPLE_JWT["USER_ID_CLAIM"]])
+
+        if foundUser:
+            return Response(model_to_dict(foundUser), status=status.HTTP_200_OK)
+        else:
+            return Response({
+                "message": "Access token invalid"
+            }, status=status.HTTP_400_BAD_REQUEST)
 
 
 class CookieTokenRefreshSerializer(TokenRefreshSerializer):
