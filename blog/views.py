@@ -16,6 +16,15 @@ from blog.models import BlogMedia
 from blog.serializers import BlogMediaSerializer, BlogPostSerializer
 
 
+def deleteMediaInArray(media_items):
+    for item in media_items.iterator():
+        if item.media_path is not None:
+            realpath = f"{settings.MEDIA_ROOT}/{item.media_path}"
+            if os.path.isfile(realpath):
+                os.remove(realpath)
+            item.delete()
+
+
 class uploadPostImg(APIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = BlogMediaSerializer
@@ -93,3 +102,16 @@ class SaveSingleBlogPost(APIView):
                 item.save()
                 print(item.media_name)
         return Response({"message": "Post saved successfully"}, status=status.HTTP_201_CREATED)
+
+
+class DeleteAllTrashMedia(APIView):
+    permission_classes = (permissions.IsAdminUser,)
+
+    def post(self, request):
+        try:
+            allTrashMedia = BlogMedia.objects.filter(media_status="trash")
+            deleteMediaInArray(allTrashMedia)
+            return Response({"message": "All trash media successfully deleted"}, status=status.HTTP_200_OK)
+        except BaseException as error:
+            print(error)
+            return Response({"message": "Can not execute command"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
