@@ -1,6 +1,7 @@
 import os
 
 import jwt
+from django.conf import settings
 from django.forms import model_to_dict
 from rest_framework import status
 from rest_framework.response import Response
@@ -9,7 +10,6 @@ from rest_framework_simplejwt.serializers import TokenRefreshSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
-from MyPortfolioDjango_Postgres import settings
 from users.models import User
 
 

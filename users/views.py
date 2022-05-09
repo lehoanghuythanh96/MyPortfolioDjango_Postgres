@@ -4,6 +4,7 @@ import uuid
 
 import certifi
 import requests
+from django.conf import settings
 from django.contrib.auth import user_logged_in
 from django.shortcuts import render
 
@@ -16,7 +17,6 @@ from rest_framework.utils import json
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from MyPortfolioDjango_Postgres import settings
 from blog.models import BlogMedia
 from users.models import User
 from users.serializers import UserSerializer
