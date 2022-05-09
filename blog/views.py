@@ -7,13 +7,13 @@ from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 
 # Create your views here.
-from rest_framework import status
+from rest_framework import status, permissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from blog.models import BlogMedia
-from blog.serializers import BlogMediaSerializer
+from blog.serializers import BlogMediaSerializer, BlogPostSerializer
 
 
 class uploadPostImg(APIView):
@@ -67,3 +67,29 @@ class uploadPostImg(APIView):
         serializer = self.serializer_class(newMedia)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class SaveSingleBlogPost(APIView):
+    permission_classes = (permissions.IsAdminUser,)
+
+    def post(self, request):
+        postInfo = request.data["postInfo"]
+        postInfo["post_author"] = request.user.id
+        postInfo["post_status"] = "publish"
+        postInfo["post_type"] = settings.POST_TYPES["blogPost"]
+        validPostInfo = BlogPostSerializer(data=postInfo)
+        validPostInfo.is_valid(raise_exception=True)
+        newPost = validPostInfo.save()
+
+        post_imgs = request.data.get('post_imgs')
+        imgList = []
+        for item in post_imgs:
+            imgList.append(item['media_name'])
+        allTrashMedia = BlogMedia.objects.filter(media_status="trash")
+        for item in allTrashMedia.iterator():
+            if item.media_name in imgList:
+                item.media_status = "publish"
+                item.media_parent = newPost
+                item.save()
+                print(item.media_name)
+        return Response({"message": "Post saved successfully"}, status=status.HTTP_201_CREATED)
