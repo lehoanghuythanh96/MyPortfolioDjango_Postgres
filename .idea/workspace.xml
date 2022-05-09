@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="edit blog url, import upload image view">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyPortfolioDjango_Postgres.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyPortfolioDjango_Postgres.iml" afterDir="false" />
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="include cdn folder in gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +39,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="MyPortfolioDjango_Postgres" type="Python.DjangoServer" factoryName="Django server">
@@ -78,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652079732715</updated>
-      <workItem from="1652079735768" duration="15887000" />
+      <workItem from="1652079735768" duration="16003000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -164,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652101596041</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="include cdn folder in gitignore">
+      <created>1652101759551</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652101759551</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +205,7 @@
     <MESSAGE value="delete migrations" />
     <MESSAGE value="add blog urls, create upload blog image view, create blog post vs blogmedia serializers" />
     <MESSAGE value="edit blog url, import upload image view" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit blog url, import upload image view" />
+    <MESSAGE value="include cdn folder in gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="include cdn folder in gitignore" />
   </component>
 </project>
