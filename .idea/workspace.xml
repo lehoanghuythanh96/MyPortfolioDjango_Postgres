@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="create Blogpost, Blogmedia model, add create cdn folder on user app begin, add user serializer, start blogapp, add google verify view, create new user function">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="create Blogpost, Blogmedia model, add create cdn folder on user app begin, add user serializer, start blogapp, add google verify view, create new user function" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652079732715</updated>
       <workItem from="1652079735768" duration="14683000" />
+      <workItem from="1652100819607" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -143,6 +142,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add, postgresql settings, start users app" />
