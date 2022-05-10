@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 from django.utils import timezone
-
 from users.models import User
 
 
@@ -27,3 +26,7 @@ class BlogMedia(models.Model):
     media_parent = models.ForeignKey(BlogPost, null=True, on_delete=models.CASCADE)
     media_date = models.DateTimeField(default=timezone.now)
     media_category = models.TextField(max_length=40, null=False)
+
+
+class AdminPanel(models.Model):
+    pass

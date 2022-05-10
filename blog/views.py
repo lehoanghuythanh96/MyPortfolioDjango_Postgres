@@ -12,7 +12,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from blog.models import BlogMedia
+from blog.models import BlogMedia, BlogPost
 from blog.serializers import BlogMediaSerializer, BlogPostSerializer
 
 
@@ -115,3 +115,23 @@ class DeleteAllTrashMedia(APIView):
         except BaseException as error:
             print(error)
             return Response({"message": "Can not execute command"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class deleteallblogpost(APIView):
+    permission_classes = (permissions.IsAdminUser,)
+
+    def post(self, request):
+        try:
+            allPosts = BlogPost.objects.all()
+            for single in allPosts.iterator():
+                relatedMedias = BlogMedia.objects.filter(media_parent=single.id)
+                deleteMediaInArray(relatedMedias)
+                single.delete()
+        except BaseException as error:
+            print(error)
+            return Response({
+                "message": error
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({
+            "message": "Deleted succesfully"
+        }, status=status.HTTP_200_OK)

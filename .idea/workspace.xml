@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="set up savesinglepost view">
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="set up delete all trash media view">
+      <change afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/graphQL.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/graphQL_Types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/graphQL_Types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/graphQL_Types.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
@@ -40,10 +48,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/users" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,7 +62,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/users" />
+      <recent name="$PROJECT_DIR$/blog" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MyPortfolioDjango_Postgres" />
     </key>
   </component>
   <component name="RunManager">
@@ -88,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652079732715</updated>
-      <workItem from="1652079735768" duration="16889000" />
+      <workItem from="1652079735768" duration="23652000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -195,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652102591062</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="set up delete all trash media view">
+      <created>1652102781693</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652102781693</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +249,7 @@
     <MESSAGE value="include cdn folder in gitignore" />
     <MESSAGE value="set up dotenv file" />
     <MESSAGE value="set up savesinglepost view" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up savesinglepost view" />
+    <MESSAGE value="set up delete all trash media view" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up delete all trash media view" />
   </component>
 </project>

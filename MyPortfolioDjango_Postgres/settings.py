@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "graphene_django",
     'rest_framework_simplejwt',
     'users',
     'blog',
@@ -229,3 +230,7 @@ POST_TYPES = {
 
 # URL used to access the media
 MEDIA_URL = '/media/'
+
+GRAPHENE = {
+    "SCHEMA": "MyPortfolioDjango_Postgres.schema.schema"
+}
