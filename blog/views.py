@@ -1,12 +1,4 @@
-import os
-import uuid
-
-import magic
 from django.conf import settings
-from django.core.files.storage import FileSystemStorage
-from django.forms import model_to_dict
-from django.shortcuts import render
-
 # Create your views here.
 from rest_framework import status, permissions
 from rest_framework.permissions import IsAuthenticated

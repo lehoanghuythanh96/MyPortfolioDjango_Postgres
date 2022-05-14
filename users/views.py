@@ -1,14 +1,14 @@
 import os
 import urllib
 import uuid
+from io import BytesIO
 
 import certifi
 import requests
 from django.conf import settings
 from django.contrib.auth import user_logged_in
-from django.shortcuts import render
-
 # Create your views here.
+from django.forms import model_to_dict
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import AllowAny
@@ -18,6 +18,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from blog.models import BlogMedia
+from blog.serializers import BlogMediaSerializer
 from users.models import User
 from users.serializers import UserSerializer
 
@@ -29,23 +30,16 @@ def saveNewUser(user, avatar_url):
 
     if avatar_url is not None:
         try:
-            userMediaFolder = f"{settings.MEDIA_ROOT}/{settings.USER_MEDIA_FOLDER}"
-            if not os.path.isdir(userMediaFolder):
-                os.mkdir(userMediaFolder)
-            avatar_name = f"{user['email']}.jpeg"
-            avatar_path = f"{userMediaFolder}/{avatar_name}"
-            f = open(avatar_path, 'wb')
-            f.write(urllib.request.urlopen(avatar_url, cafile=certifi.where()).read())
-            f.close()
+            file = urllib.request.urlopen(avatar_url, cafile=certifi.where()).read()
+            output = BytesIO(file)
             newMedia = BlogMedia(
-                media_name=avatar_name,
                 media_author=newUser,
-                media_path=f"{settings.USER_MEDIA_FOLDER}/{avatar_name}",
-                media_type="image/jpeg",
                 media_status="publish",
                 media_parent=None,
-                media_category=settings.MEDIA_CATEGORIES["userAvatar"]
+                media_category=settings.MEDIA_CATEGORIES["userAvatar"],
+                media_file=output
             )
+            BlogMedia.full_clean(newMedia)
             BlogMedia.save(newMedia)
 
         except BaseException as err:

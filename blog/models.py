@@ -40,10 +40,10 @@ class BlogMedia(models.Model):
     media_author = models.ForeignKey(
         User, on_delete=models.CASCADE, null=False)
     media_name = models.CharField(
-        max_length=80, blank=False, null=False)
-    media_type = models.CharField(max_length=20, null=True)
+        max_length=80, blank=True, null=True)
+    media_type = models.CharField(max_length=20, blank=True, null=True)
     media_status = models.CharField(max_length=20)
-    media_parent = models.ForeignKey(BlogPost, null=True, on_delete=models.CASCADE)
+    media_parent = models.ForeignKey(BlogPost, null=True, blank=True, on_delete=models.CASCADE)
     media_date = models.DateTimeField(default=timezone.now)
     media_category = models.TextField(max_length=40, null=False)
     media_file = models.ImageField(upload_to=where_to_save_media, null=False)
