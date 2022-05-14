@@ -32,6 +32,10 @@ class BlogPost(models.Model):
         return
 
 
+def where_to_save_media(self, filename):
+    return f"{self.media_category}/{filename}"
+
+
 class BlogMedia(models.Model):
     media_author = models.ForeignKey(
         User, on_delete=models.CASCADE, null=False)
@@ -42,7 +46,7 @@ class BlogMedia(models.Model):
     media_parent = models.ForeignKey(BlogPost, null=True, on_delete=models.CASCADE)
     media_date = models.DateTimeField(default=timezone.now)
     media_category = models.TextField(max_length=40, null=False)
-    media_file = models.ImageField(upload_to='test', null=False)
+    media_file = models.ImageField(upload_to=where_to_save_media, null=False)
 
     def save(self, *args, **kwargs):
         new_img = Image.open(self.media_file)
