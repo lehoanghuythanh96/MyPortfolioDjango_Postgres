@@ -49,17 +49,21 @@ class BlogMedia(models.Model):
         width = 2200
         new_name = f"{uuid.uuid4()}.{new_img.format.lower()}"
 
+        output = BytesIO()
+
         if new_img.size[0] > width:
-            output = BytesIO()
             new_height = floor(width * (new_img.size[1] / new_img.size[0]))
             res_img = new_img.resize((width, new_height), Image.ANTIALIAS)
             res_img.save(output, format=new_img.format)
-            img_mime = magic.from_buffer(output.getvalue(), mime=True)
-            self.media_file = InMemoryUploadedFile(output, None, new_name, img_mime,
-                                                   sys.getsizeof(output), None)
+        else:
+            new_img.save(output, format=new_img.format)
 
+        img_mime = magic.from_buffer(output.getvalue(), mime=True)
+        self.media_file = InMemoryUploadedFile(output, None, new_name, img_mime,
+                                               sys.getsizeof(output), None)
+
+        self.media_type = img_mime
         self.media_name = new_name
-        self.media_file.name = new_name
         super(BlogMedia, self).save(*args, **kwargs)
         return
 

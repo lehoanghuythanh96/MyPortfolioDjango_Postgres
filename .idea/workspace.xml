@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="set up graphene">
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="add resize image in blogmedia save function, add overwrite for delete Blogpost -&gt; remove image file before delete post. Edit delete media function.&#10;add delete post by ids url&#10;edit all media deletion in blog view py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652079732715</updated>
       <workItem from="1652079735768" duration="24607000" />
-      <workItem from="1652345519721" duration="21480000" />
+      <workItem from="1652345519721" duration="22278000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -218,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652207702694</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add resize image in blogmedia save function, add overwrite for delete Blogpost -&gt; remove image file before delete post. Edit delete media function.&#10;add delete post by ids url&#10;edit all media deletion in blog view py">
+      <created>1652530435765</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1652530435765</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +258,7 @@
     <MESSAGE value="set up savesinglepost view" />
     <MESSAGE value="set up delete all trash media view" />
     <MESSAGE value="set up graphene" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up graphene" />
+    <MESSAGE value="add resize image in blogmedia save function, add overwrite for delete Blogpost -&gt; remove image file before delete post. Edit delete media function.&#10;add delete post by ids url&#10;edit all media deletion in blog view py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add resize image in blogmedia save function, add overwrite for delete Blogpost -&gt; remove image file before delete post. Edit delete media function.&#10;add delete post by ids url&#10;edit all media deletion in blog view py" />
   </component>
 </project>
