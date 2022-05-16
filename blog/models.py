@@ -17,6 +17,7 @@ from users.models import User
 
 class BlogPost(models.Model):
     post_title = models.CharField(max_length=255, null=False)
+    post_url_name = models.CharField(max_length=255, null=False)
     post_content = models.TextField(null=False)
     post_author = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     post_date = models.DateTimeField(default=timezone.now)

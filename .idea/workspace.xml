@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="blogmedia model: change upload_to folder to dynamic function">
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="edit blogmedia model, change avatar saving method of google login function.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cdn/userImgs/hoanghuythanhle96@gmail.com.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,8 @@
       <option name="presentableId" value="Default" />
       <updated>1652079732715</updated>
       <workItem from="1652079735768" duration="24607000" />
-      <workItem from="1652345519721" duration="25302000" />
+      <workItem from="1652345519721" duration="28472000" />
+      <workItem from="1652711728108" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -240,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652531724916</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="edit blogmedia model, change avatar saving method of google login function.">
+      <created>1652534154711</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1652534154711</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +284,7 @@
     <MESSAGE value="add resize image in blogmedia save function, add overwrite for delete Blogpost -&gt; remove image file before delete post. Edit delete media function.&#10;add delete post by ids url&#10;edit all media deletion in blog view py" />
     <MESSAGE value="edit blogmedia model: Add mime type when saving" />
     <MESSAGE value="blogmedia model: change upload_to folder to dynamic function" />
-    <option name="LAST_COMMIT_MESSAGE" value="blogmedia model: change upload_to folder to dynamic function" />
+    <MESSAGE value="edit blogmedia model, change avatar saving method of google login function." />
+    <option name="LAST_COMMIT_MESSAGE" value="edit blogmedia model, change avatar saving method of google login function." />
   </component>
 </project>
