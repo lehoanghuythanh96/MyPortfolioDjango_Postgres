@@ -6,6 +6,8 @@ WORKDIR /ht-portfolio-app
 
 COPY requirements.txt /ht-portfolio-app/
 
+RUN rename .env-template .env
+
 RUN pip install -r requirements.txt
 
 COPY . /ht-portfolio-app/
