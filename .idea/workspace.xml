@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="add dockerfile and docker settings">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="add env template" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,6 +305,7 @@
     <MESSAGE value="edit blogmedia model, change avatar saving method of google login function." />
     <MESSAGE value="add post_url_name to Blogpost Model" />
     <MESSAGE value="add dockerfile and docker settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dockerfile and docker settings" />
+    <MESSAGE value="add env template" />
+    <option name="LAST_COMMIT_MESSAGE" value="add env template" />
   </component>
 </project>
