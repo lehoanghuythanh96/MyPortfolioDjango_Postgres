@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="add post_url_name to Blogpost Model">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="add dockerfile and docker settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +98,7 @@
       <workItem from="1652711728108" duration="3129000" />
       <workItem from="1652888334087" duration="2535000" />
       <workItem from="1652891137595" duration="550000" />
-      <workItem from="1652892835506" duration="7474000" />
+      <workItem from="1652892835506" duration="8521000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -259,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652714667780</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add dockerfile and docker settings">
+      <created>1652967148593</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1652967148593</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +301,7 @@
     <MESSAGE value="blogmedia model: change upload_to folder to dynamic function" />
     <MESSAGE value="edit blogmedia model, change avatar saving method of google login function." />
     <MESSAGE value="add post_url_name to Blogpost Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="add post_url_name to Blogpost Model" />
+    <MESSAGE value="add dockerfile and docker settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dockerfile and docker settings" />
   </component>
 </project>
