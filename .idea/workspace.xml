@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="edit blogmedia model, change avatar saving method of google login function.">
+    <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="add post_url_name to Blogpost Model">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,18 +48,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/users" />
       <recent name="$PROJECT_DIR$/blog" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/MyPortfolioDjango_Postgres" />
@@ -97,7 +100,10 @@
       <updated>1652079732715</updated>
       <workItem from="1652079735768" duration="24607000" />
       <workItem from="1652345519721" duration="28472000" />
-      <workItem from="1652711728108" duration="603000" />
+      <workItem from="1652711728108" duration="3129000" />
+      <workItem from="1652888334087" duration="2535000" />
+      <workItem from="1652891137595" duration="550000" />
+      <workItem from="1652892835506" duration="7474000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -246,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652534154711</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add post_url_name to Blogpost Model">
+      <created>1652714667780</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1652714667780</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +298,7 @@
     <MESSAGE value="edit blogmedia model: Add mime type when saving" />
     <MESSAGE value="blogmedia model: change upload_to folder to dynamic function" />
     <MESSAGE value="edit blogmedia model, change avatar saving method of google login function." />
-    <option name="LAST_COMMIT_MESSAGE" value="edit blogmedia model, change avatar saving method of google login function." />
+    <MESSAGE value="add post_url_name to Blogpost Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="add post_url_name to Blogpost Model" />
   </component>
 </project>

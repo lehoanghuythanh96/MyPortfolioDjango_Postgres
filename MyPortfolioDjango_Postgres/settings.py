@@ -87,15 +87,15 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'MyPortfolio',
+        'NAME': os.environ['POSTGRES_DB_NAME'],
 
-        'USER': 'postgres',
+        'USER': os.environ['POSTGRES_DB_USER'],
 
-        'PASSWORD': 'abc',
+        'PASSWORD': os.environ['POSTGRES_DB_PASSWORD'],
 
-        'HOST': 'localhost',
+        'HOST': os.environ['POSTGRES_DB_HOST'],
 
-        'PORT': '5432',
+        'PORT': os.environ['POSTGRES_DB_PORT'],
 
     }
 
@@ -145,10 +145,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Extra settings
 
 AUTH_USER_MODEL = 'users.User'
+
 # Allow credentials
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
+    os.environ['CORS_ALLOWED_ORIGINS_1'],
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -214,9 +215,7 @@ SIMPLE_JWT = {
 
 # Media
 
-MEDIA_ROOT = 'cdn'
-USER_MEDIA_FOLDER = 'userImgs'
-POST_MEDIA_FOLDER = 'postImgs'
+MEDIA_ROOT = os.environ['MEDIA_ROOT_FOLDER']
 
 MEDIA_CATEGORIES = {
     "blogPostImage": "blogpost_image",

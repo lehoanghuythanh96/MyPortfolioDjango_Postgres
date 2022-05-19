@@ -54,10 +54,13 @@ class SaveSingleBlogPost(APIView):
         validPostInfo.is_valid(raise_exception=True)
         newPost = validPostInfo.save()
 
-        post_imgs = request.data.get('post_imgs')
+        post_imgs = request.data.get("post_imgs")
         imgList = []
         for item in post_imgs:
-            imgList.append(item['id'])
+            imgList.append(item["id"])
+        if request.data.get("post_avatar"):
+            post_avatar = request.data.get("post_avatar")
+            imgList.append(post_avatar["id"])
         BlogMedia.objects.filter(id__in=imgList, media_author=request.user.id).update(media_status="publish", media_parent=newPost)
         return Response({"message": "Post saved successfully"}, status=status.HTTP_201_CREATED)
 
