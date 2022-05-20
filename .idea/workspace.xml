@@ -52,7 +52,6 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -104,8 +103,7 @@
       <workItem from="1652891137595" duration="550000" />
       <workItem from="1652892835506" duration="9891000" />
       <workItem from="1652988096183" duration="2557000" />
-      <workItem from="1653039044799" duration="2708000" />
-      <workItem from="1653042924861" duration="2000" />
+      <workItem from="1653039044799" duration="2950000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
