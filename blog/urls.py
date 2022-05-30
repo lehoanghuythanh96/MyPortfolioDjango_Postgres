@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^post/savenewpost/$', SaveSingleBlogPost.as_view()),
     url(r'^media/deleteall/$', DeleteAllTrashMedia.as_view()),
     url(r'^post/deleteall/$', deleteallblogpost.as_view()),
-    url(r'^post/deletebyids/$', deleteblogpostby_ids.as_view()),
+    url(r'^post/deletebyids/$', deleteblogpostby_ids.as_view())
 ]

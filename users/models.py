@@ -58,3 +58,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     def save(self, *args, **kwargs):
         super(User, self).save(*args, **kwargs)
         return self
+
+
+class CryptoWallet(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=False)
+    huta_coin = models.BigIntegerField(null=False, default=0, blank=False)
+    wallet_address = models.CharField(max_length=255, null=True)

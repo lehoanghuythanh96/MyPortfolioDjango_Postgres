@@ -2,6 +2,10 @@ import os
 import urllib
 import uuid
 from io import BytesIO
+from eth_utils import to_hex, to_wei, to_bytes
+
+from eth_typing import HexStr
+from web3 import Web3
 
 import certifi
 import requests
@@ -11,7 +15,7 @@ from django.contrib.auth import user_logged_in
 from django.forms import model_to_dict
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.utils import json
 from rest_framework.views import APIView
@@ -102,7 +106,8 @@ def authenticate_user(request):
                     return Response({"message": "User authentication failed"}, status=status.HTTP_400_BAD_REQUEST)
             else:
                 return Response(
-                    {"message": "Can not authenticate with the given credentials or the account has been deactivated"},status=status.HTTP_400_BAD_REQUEST)
+                    {"message": "Can not authenticate with the given credentials or the account has been deactivated"},
+                    status=status.HTTP_400_BAD_REQUEST)
 
         except Exception:
             return Response({"message": "Email or password is wrong"}, status=status.HTTP_400_BAD_REQUEST)
@@ -149,13 +154,85 @@ class VerifyGoogleTokenId(APIView):
                     return res
                 except BaseException as error:
                     print(error)
-                    return Response({"message": "Can not create user with this email, please try again"}, status=status.HTTP_400_BAD_REQUEST)
+                    return Response({"message": "Can not create user with this email, please try again"},
+                                    status=status.HTTP_400_BAD_REQUEST)
             else:
-                return Response({"message": "There are more than 1 accounts with this email, please contact admin for more information"},
-                                status=status.HTTP_400_BAD_REQUEST)
+                return Response({
+                    "message": "There are more than 1 accounts with this email, please contact admin for more information"},
+                    status=status.HTTP_400_BAD_REQUEST)
             # image_url = data["picture"]  # the image on the web
             # save_name = 'my_image.jpg'  # local name to be saved
             # urllib.request.urlretrieve(image_url, f"{settings.MEDIA_ROOT}/{save_name}")
 
         else:
-            return Response({"message": "Google access token authentication failed"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Google access token authentication failed"},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+
+class UpdateCryptoWalletAddress(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        sender = "0xAA371aa0D70dd1DA713aE3Cd6A6ff7b36ff8dD67"
+        receiver = "0xFFf2D0D3C078eE16E86B445D2710227E10bE2d2c"
+        tokenAddress = "0x5b4dc6d05b58635dae135109263deb97ecda4978"
+        sending_amount = 100
+        sender_private_key = "ff6fe2a3a655390155c54bb4b70b103f37474d7152bcbb1c472f8ab09834f2f6"
+
+        contractABI = [
+            {
+                "constant": True,
+                "inputs": [{"name": "recipient", "type": "address"},
+                           {"name": "amount", "type": "uint256"}],
+                "name": "transfer",
+                "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+                "type": "function",
+                "payable": True
+            },
+            {
+                "constant": True,
+                "inputs": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    }
+                ],
+                "name": "balanceOf",
+                "outputs": [
+                    {
+                        "name": "balance",
+                        "type": "uint256"
+                    }
+                ],
+                "payable": False,
+                "type": "function"
+            }
+        ]
+        w3 = Web3(Web3.HTTPProvider('https://rinkeby.infura.io/v3/e24fd90da4f440e8a7400fb923ab8238'))
+        contract = w3.eth.contract(address=Web3.toChecksumAddress(tokenAddress),
+                                   abi=contractABI)  # declaring the token contract
+        token_balance = contract.functions.balanceOf(sender).call()
+
+        amount = to_hex(to_wei(sending_amount, 'ether'))
+
+        data = contract.functions.transfer(Web3.toChecksumAddress(receiver), to_wei(100, 'ether')).buildTransaction({
+            "gas": 100000,
+            "from": Web3.toChecksumAddress(sender),
+            "gasPrice": w3.eth.gas_price,
+            "nonce": w3.eth.get_transaction_count(sender)
+        })
+
+        txObj = {
+            "gas": to_hex(100000),
+            "to": tokenAddress,
+            "value": "0x00",
+            "data": data,
+            "from": sender,
+            "gasPrice": w3.eth.gas_price,
+            "nonce": w3.eth.get_transaction_count(sender)
+        }
+
+        raw_result = w3.eth.account.signTransaction(data, sender_private_key)
+        result = w3.eth.sendRawTransaction(raw_result.rawTransaction)
+        print(to_hex(result))
+        return Response({"message": "ok"}, status=status.HTTP_200_OK)

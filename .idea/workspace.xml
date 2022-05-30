@@ -2,8 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89360f21-7db3-4fa9-9200-cdc87393add7" name="Default Changelist" comment="migrations">
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0002_auto_20220523_1257.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0003_alter_postreadcounter_posts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0004_alter_postreadcounter_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0005_alter_postreadcounter_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0006_alter_postreadcounter_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0007_alter_postreadcounter_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0008_alter_postreadcounter_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0009_alter_postreadcounter_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_cryptowallet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/graphQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/graphQL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyPortfolioDjango_Postgres/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/graphQL_Types.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/graphQL_Types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/authentication.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/graphQL_Types.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/graphQL_Types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +62,15 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="28uwMkh0S2UtwQC0DaFtSiWBvXP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -109,7 +136,9 @@
       <workItem from="1652988096183" duration="2557000" />
       <workItem from="1653039044799" duration="2708000" />
       <workItem from="1653042924861" duration="2000" />
-      <workItem from="1653042946195" duration="618000" />
+      <workItem from="1653042946195" duration="48758000" />
+      <workItem from="1653476557227" duration="1803000" />
+      <workItem from="1653751185625" duration="9165000" />
     </task>
     <task id="LOCAL-00001" summary="add, postgresql settings, start users app">
       <created>1652083109495</created>
@@ -314,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653043019146</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="migrations">
+      <created>1653043576363</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1653043576363</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +369,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add, postgresql settings, start users app" />
     <MESSAGE value="add Usermodel" />
     <MESSAGE value="set up Cors origin" />

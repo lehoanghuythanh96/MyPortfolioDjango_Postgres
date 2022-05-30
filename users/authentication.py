@@ -1,5 +1,3 @@
-import os
-
 import jwt
 from django.conf import settings
 from django.forms import model_to_dict
@@ -12,6 +10,13 @@ from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
 from users.models import User
 
+
+def JWT_Authenticate(key):
+    try:
+        decoded = jwt.decode(key, settings.SECRET_KEY, settings.SIMPLE_JWT["ALGORITHM"])
+    except BaseException as error:
+        raise TokenError(error)
+    return decoded
 
 class CustomTokenVerifyView(TokenVerifyView):
 
@@ -26,12 +31,13 @@ class CustomTokenVerifyView(TokenVerifyView):
             raise InvalidToken(e.args[0])
 
         if "token" in request.data:
-            userinfo = jwt.decode(request.data["token"], settings.SECRET_KEY, settings.SIMPLE_JWT["ALGORITHM"])
+            userinfo = JWT_Authenticate(request.data["token"])
             if settings.SIMPLE_JWT["USER_ID_CLAIM"] in userinfo:
                 foundUser = User.objects.get(id=userinfo[settings.SIMPLE_JWT["USER_ID_CLAIM"]])
 
         if foundUser:
-            return Response(model_to_dict(foundUser), status=status.HTTP_200_OK)
+            result = model_to_dict(foundUser)
+            return Response(result, status=status.HTTP_200_OK)
         else:
             return Response({
                 "message": "Access token invalid"

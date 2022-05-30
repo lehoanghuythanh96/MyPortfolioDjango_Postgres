@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ['ALLOWED_HOSTS_1']]
 
 # Application definition
 
@@ -150,6 +150,7 @@ AUTH_USER_MODEL = 'users.User'
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     os.environ['CORS_ALLOWED_ORIGINS_1'],
+    os.environ['CORS_ALLOWED_ORIGINS_2'],
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -231,5 +232,8 @@ POST_TYPES = {
 MEDIA_URL = '/media/'
 
 GRAPHENE = {
-    "SCHEMA": "MyPortfolioDjango_Postgres.schema.schema"
+    "SCHEMA": "MyPortfolioDjango_Postgres.schema.schema",
+    "MIDDLEWARE": [
+        "MyPortfolioDjango_Postgres.graphQL.CustomJSONWebTokenMiddleware",
+    ],
 }

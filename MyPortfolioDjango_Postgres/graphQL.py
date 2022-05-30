@@ -3,17 +3,14 @@ from http.cookies import SimpleCookie
 import jwt
 from django.conf import settings
 from django.contrib.auth import get_user_model
-import graphene
-from graphene_django import DjangoObjectType
 
-from blog.graphQL_Types import BlogPostType
-from blog.models import BlogPost, AdminPanel
+from users.authentication import JWT_Authenticate
 
 
 class CustomJSONWebTokenMiddleware:
 
     def get_user(self, token):
-        validated_token = jwt.decode(token, settings.SECRET_KEY, settings.SIMPLE_JWT["ALGORITHM"])
+        validated_token = JWT_Authenticate(token)
         if "id" in validated_token:
             user = get_user_model().objects.get(id=validated_token["id"])
             if user:
@@ -23,7 +20,7 @@ class CustomJSONWebTokenMiddleware:
     def check_refresh_token(self, info):
         raw_cookie = info.context.headers.get('Cookie')
         if raw_cookie is None:
-            raise Exception("Please set up refresh_token cookie for graphql request")
+            return None
         cookie = SimpleCookie()
         cookie.load(raw_cookie)
         cookies = {}

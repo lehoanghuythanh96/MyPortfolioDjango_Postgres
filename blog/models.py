@@ -10,8 +10,9 @@ from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
 # Create your models here.
-from django.db.models import Manager
 from django.utils import timezone
+from django.contrib.postgres.fields import ArrayField
+
 from users.models import User
 
 
@@ -19,7 +20,7 @@ class BlogPost(models.Model):
     post_title = models.CharField(max_length=255, null=False)
     post_url_name = models.CharField(max_length=255, null=False)
     post_content = models.TextField(null=False)
-    post_author = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
+    post_author = models.ForeignKey("users.User", on_delete=models.CASCADE, null=False)
     post_date = models.DateTimeField(default=timezone.now)
     post_type = models.CharField(max_length=55, null=False)
     post_category = models.CharField(max_length=55, null=False)
@@ -39,12 +40,12 @@ def where_to_save_media(self, filename):
 
 class BlogMedia(models.Model):
     media_author = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=False)
+        "users.User", on_delete=models.CASCADE, null=False)
     media_name = models.CharField(
         max_length=80, blank=True, null=True)
     media_type = models.CharField(max_length=20, blank=True, null=True)
     media_status = models.CharField(max_length=20)
-    media_parent = models.ForeignKey(BlogPost, null=True, blank=True, on_delete=models.CASCADE)
+    media_parent = models.ForeignKey("blog.BlogPost", null=True, blank=True, on_delete=models.CASCADE)
     media_date = models.DateTimeField(default=timezone.now)
     media_category = models.TextField(max_length=40, null=False)
     media_file = models.ImageField(upload_to=where_to_save_media, null=False)
@@ -82,3 +83,8 @@ class BlogMedia(models.Model):
 
 class AdminPanel(models.Model):
     pass
+
+
+class PostReadCounter(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    posts = ArrayField(models.BigIntegerField(blank=True), blank=False)

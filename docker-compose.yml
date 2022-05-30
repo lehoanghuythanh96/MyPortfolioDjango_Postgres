@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  postgres-db:
+    image: postgres:14
+    networks:
+      - htportfolioNetwork
+    volumes:
+      - myportfolio_postgres-data:/var/lib/postgresql/data
+
+  django-htportfolio-apiserver:
+    image: django-htportfolio-apiserver
+    build: .
+    container_name: Django_Postgres_BE_dev
+    command: sh -c "python3 manage.py migrate --noinput && python3 manage.py runserver 0.0.0.0:8000"
+    tty: true
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_DB_PASSWORD: postgres
+      POSTGRES_DB_HOST: postgres-db
+      POSTGRES_DB_PORT: 5432
+    networks:
+      - htportfolioNetwork
+    depends_on:
+      - postgres-db
+    restart: on-failure
+
+networks:
+  htportfolioNetwork:
+    driver: bridge
+
+volumes:
+  myportfolio_postgres-data:
+    external: true
